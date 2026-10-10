@@ -11,7 +11,11 @@ import {
   ProvidersResponse
 } from "../types";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000/api";
+let rawBaseUrl = (import.meta.env.VITE_API_BASE_URL || "http://localhost:8000/api").trim().replace(/\/+$/, "");
+if (!rawBaseUrl.endsWith("/api")) {
+  rawBaseUrl += "/api";
+}
+const API_BASE_URL = rawBaseUrl;
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
