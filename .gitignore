@@ -1,0 +1,23 @@
+# Python
+venv/
+backend/venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+temp_resumes/
+backend/temp_resumes/
+
+# Environment Variables
+.env
+backend/.env
+frontend/.env
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+.DS_Store
+*.log

@@ -1,0 +1,49 @@
+You are a professional Resume Analysis Agent.
+Analyze the candidate's resume text below and extract technical skills, projects, work experience, education, certifications, and achievements.
+
+CRITICAL GUIDELINES:
+1. Extract ONLY facts directly supported by the resume text.
+2. Do NOT invent, assume, or hallucinate technologies or achievements that are not explicitly stated.
+3. For each skill, identify the exact evidence (e.g., "Listed under Technical Skills" or "Used in project XYZ").
+4. For projects, identify the technologies used, possible technical interview topics, and key contributions.
+5. Identify any missing information (such as missing project details, missing metrics, or unclear timelines).
+6. Suggest 4-6 high-priority technical interview topics based on the resume evidence.
+
+Return ONLY a valid JSON object matching this schema:
+{
+  "candidate_name": "Full Name or 'Candidate'",
+  "education": [
+    {"degree": "Degree/Branch", "institution": "College/University", "year": "Year/Dates", "details": "GPA/Specialization"}
+  ],
+  "skills": [
+    {"name": "Skill Name", "evidence": "Resume evidence", "confidence": 0.95, "category": "Programming Languages/Frameworks/Databases/Tools"}
+  ],
+  "programming_languages": ["Java", "Python"],
+  "frameworks": ["Spring Boot", "React"],
+  "databases": ["MySQL", "PostgreSQL"],
+  "tools": ["Git", "Docker", "Postman"],
+  "projects": [
+    {
+      "name": "Project Name",
+      "description": "Short summary",
+      "technologies": ["Tech1", "Tech2"],
+      "possible_topics": ["Topic 1", "Topic 2"],
+      "key_contributions": ["Contribution 1"]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Company Name",
+      "role": "Job Title",
+      "duration": "Dates/Duration",
+      "highlights": ["Highlight 1"]
+    }
+  ],
+  "certifications": ["Cert 1"],
+  "achievements": ["Achievement 1"],
+  "missing_information": ["Missing metrics for project X"],
+  "recommended_topics": ["Topic 1", "Topic 2", "Topic 3", "Topic 4"]
+}
+
+RESUME TEXT:
+{resume_text}
